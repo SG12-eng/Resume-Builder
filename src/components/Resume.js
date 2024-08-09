@@ -3,13 +3,20 @@ import Skills from "./Skills";
 import Education from "./Education";
 import Experience from "./Experience";
 
-const Resume = ({ data }) => {
+
+const Resume = ({ data, theme }) => {
   return (
-    <div>
+    <div className={ `resume ${theme}`}>
       <h1>Resume</h1>
-      <Skills skills={data.skills} />
-      <Education education={data.education} />
-      <Experience experience={data.experience} />
+      <div className="section">
+        <Skills skills={data.skills} />
+      </div>
+      <div className="section">
+        <Education education={data.education} />
+      </div>
+      <div className="section">
+        <Experience experience={data.experience} />
+      </div>
     </div>
   );
 };
